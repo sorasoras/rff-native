@@ -1,0 +1,12 @@
+#include "tc_rt.h"
+
+void fn_801655e4(u32 param_1, u32 param_2)
+{
+    TcArgs a = {0};
+    (void)param_1;
+    a.r[0] = 8u;
+    a.r[1] = param_2;
+    a.r[2] = 0u;
+    (void)tc_call(0x801412f8u, &a);
+    return;
+}

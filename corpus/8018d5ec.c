@@ -1,0 +1,32 @@
+#include "tc_rt.h"
+
+void fn_8018d5ec(u32 param_1, s32 param_2)
+{
+    u32 r3 = 0, r30 = 0, r31 = 0;
+    f64 f1 = 0.0;
+    TcArgs a = {0};
+    (void)param_1;
+    r31 = rd32(0x805706e8u);
+    r30 = rd32(0x8046adecu);
+    while (r30 != 0u) {
+        r3 = r30;
+        r30 = rd32(r30);
+        r3 = rd32(r3 + 8u);
+        if (r31 == rd32(r3 + 0x7cu)) {
+            if ((u32)param_2 == rd32(r3 + 0xf4u)) {
+                wr32(r3 + 0x74u, rd32(r3 + 0x74u) | 0x80000000u);
+                a.r[0] = r3;
+                a.r[1] = 1u;
+                a.f[0] = f1;
+                f1 = tc_callf(rd32(rd32(r3) + 0x88u), &a);
+            } else {
+                wr32(r3 + 0x74u, rd32(r3 + 0x74u) & 0x7fffffffu);
+                a.r[0] = r3;
+                a.r[1] = 0u;
+                a.f[0] = f1;
+                f1 = tc_callf(rd32(rd32(r3) + 0x88u), &a);
+            }
+        }
+    }
+    return;
+}

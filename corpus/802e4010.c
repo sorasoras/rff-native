@@ -1,0 +1,84 @@
+#include "tc_rt.h"
+
+void fn_802e4010(u32 param_1, f64 param_f1, f64 param_f2, f64 param_f3, f64 param_f4, f64 param_f5, f64 param_f6, f64 param_f7, f64 param_f8, u32 param_r10, u32 param_r4, u32 param_r5, u32 param_r6, u32 param_r7, u32 param_r8, u32 param_r9)
+{
+    u32 r29 = 0, r30 = 0;
+    f64 f1 = 0.0;
+    TcArgs a = {0};
+    r29 = param_1;
+    a.f[0] = param_f1;
+    a.f[1] = param_f2;
+    a.f[2] = param_f3;
+    a.f[3] = param_f4;
+    a.f[4] = param_f5;
+    a.f[5] = param_f6;
+    a.f[6] = param_f7;
+    a.f[7] = param_f8;
+    a.r[0] = 0x8039cbc0u;
+    a.r[1] = param_r4;
+    a.r[2] = param_r5;
+    a.r[3] = param_r6;
+    a.r[4] = param_r7;
+    a.r[5] = param_r8;
+    a.r[6] = param_r9;
+    a.r[7] = param_r10;
+    f1 = tc_callf(0x802e3f78u, &a);
+    a.f[0] = f1;
+    a.f[1] = 0.0;
+    a.f[2] = 0.0;
+    a.f[3] = 0.0;
+    a.f[4] = 0.0;
+    a.f[5] = 0.0;
+    a.f[6] = 0.0;
+    a.f[7] = 0.0;
+    a.r[0] = 0x8039cbe8u;
+    a.r[1] = tc_lastr4();
+    a.r[2] = 0u;
+    a.r[3] = 0u;
+    a.r[4] = 0u;
+    a.r[5] = 0u;
+    a.r[6] = 0u;
+    a.r[7] = 0u;
+    f1 = tc_callf(0x802e3f78u, &a);
+    r30 = 0u;
+    while (r29 != 0u && (r29 + 0x10000u) != 0xffffu && (r29 & 0x80000000u) != 0u) {
+        a.f[0] = f1;
+        a.f[1] = 0.0;
+        a.f[2] = 0.0;
+        a.f[3] = 0.0;
+        a.f[4] = 0.0;
+        a.f[5] = 0.0;
+        a.f[6] = 0.0;
+        a.f[7] = 0.0;
+        a.r[0] = 0x8039cc08u;
+        a.r[1] = r29;
+        a.r[2] = rd32(r29);
+        a.r[3] = rd32(r29 + 4u);
+        a.r[4] = 0u;
+        a.r[5] = 0u;
+        a.r[6] = 0u;
+        a.r[7] = 0u;
+        f1 = tc_callf(0x802e3f78u, &a);
+        a.f[0] = f1;
+        a.f[1] = 0.0;
+        a.f[2] = 0.0;
+        a.f[3] = 0.0;
+        a.f[4] = 0.0;
+        a.f[5] = 0.0;
+        a.f[6] = 0.0;
+        a.f[7] = 0.0;
+        a.r[0] = 0x80570f10u;
+        a.r[1] = tc_lastr4();
+        a.r[2] = 0u;
+        a.r[3] = 0u;
+        a.r[4] = 0u;
+        a.r[5] = 0u;
+        a.r[6] = 0u;
+        a.r[7] = 0u;
+        f1 = tc_callf(0x802e3f78u, &a);
+        r30 = r30 + 1u;
+        r29 = rd32(r29);
+        if (r30 >= 0x10u) break;
+    }
+    return;
+}

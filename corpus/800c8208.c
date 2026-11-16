@@ -1,0 +1,80 @@
+#include "tc_rt.h"
+
+void fn_800c8208(u32 param_1, u32 param_2)
+{
+    u32 r3 = 0, r30 = 0, r31 = 0;
+    TcArgs a = {0};
+    wr32(0x817fdfe0u, 0x817fe000u);
+    wr32(0x817fe004u, 0x817ff000u);
+    wr32(0x817fdffcu, 0u);
+    wr32(0x817fdff8u, 0u);
+    wr32(0x817fdff4u, 0u);
+    wr32(0x817fdff0u, 0u);
+    a.r[0] = param_1;
+    a.r[1] = param_2;
+    r3 = tc_call(0x800c87e4u, &a);
+    r30 = rd32(r3);
+    r31 = r3;
+    a.r[0] = r3;
+    a.r[1] = 0u;
+    a.r[2] = 0x30u;
+    (void)tc_call(0x8000443cu, &a);
+    if (rd32(r31) < 0xabu) {
+        wr32(0x817fdfe8u, r30);
+        wr32(r31, r30);
+        a.r[0] = 0x817fdfe8u;
+        r3 = tc_call(0x801495bcu, &a);
+        wr16(r31 + 0x22u, (u16)r3);
+        a.r[0] = 0x817fdfe8u;
+        r3 = tc_call(0x801495d4u, &a);
+        wr16(r31 + 0x24u, (u16)r3);
+        a.r[0] = 0x817fdfe8u;
+        r3 = tc_call(0x80149604u, &a);
+        wr16(r31 + 0x26u, (u16)r3);
+        a.r[0] = 0x817fdfe8u;
+        r3 = tc_call(0x80149544u, &a);
+        wr32(r31 + 4u, r3);
+        a.r[0] = 0x817fdfe8u;
+        r3 = tc_call(0x8014955cu, &a);
+        wr32(r31 + 8u, r3);
+        a.r[0] = 0x817fdfe8u;
+        r3 = tc_call(0x80149574u, &a);
+        wr32(r31 + 0xcu, r3);
+        a.r[0] = 0x817fdfe8u;
+        r3 = tc_call(0x8014958cu, &a);
+        wr32(r31 + 0x10u, r3);
+        a.r[0] = 0x817fdfe8u;
+        r3 = tc_call(0x801495a4u, &a);
+        wr32(r31 + 0x14u, r3);
+        a.r[0] = 0x817fdfe8u;
+        r3 = tc_call(0x8014961cu, &a);
+        wr8(r31 + 0x28u, (u8)r3);
+        a.r[0] = 0x817fdfe8u;
+        r3 = tc_call(0x80149634u, &a);
+        wr8(r31 + 0x29u, (u8)r3);
+        a.r[0] = 0x817fdfe8u;
+        r3 = tc_call(0x8014964cu, &a);
+        wr8(r31 + 0x2au, (u8)r3);
+        a.r[0] = 0x817fdfe8u;
+        r3 = tc_call(0x80149664u, &a);
+        wr8(r31 + 0x2bu, (u8)r3);
+        a.r[0] = 0x817fdfe8u;
+        r3 = tc_call(0x8014961cu, &a);
+        wr8(r31 + 0x2cu, (u8)r3);
+        a.r[0] = 0x817fdfe8u;
+        r3 = tc_call(0x80149634u, &a);
+        wr8(r31 + 0x2du, (u8)r3);
+        a.r[0] = 0x817fdfe8u;
+        r3 = tc_call(0x8014964cu, &a);
+        wr8(r31 + 0x2eu, (u8)r3);
+        a.r[0] = 0x817fdfe8u;
+        r3 = tc_call(0x80149664u, &a);
+        wr8(r31 + 0x2fu, (u8)r3);
+        a.r[0] = param_1;
+        a.r[1] = param_2;
+        r3 = tc_call(0x800c8804u, &a);
+        wr32(r31 + 0x18u, r3);
+        wr32(r31 + 0x1cu, r3);
+    }
+    return;
+}

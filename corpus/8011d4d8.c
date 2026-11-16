@@ -1,0 +1,20 @@
+#include "tc_rt.h"
+
+void fn_8011d4d8(s32 param_1)
+{
+    TcArgs a = {0};
+    a.r[0] = 2u;
+    (void)tc_call(0x80044e28u, &a);
+    a.r[0] = 1u;
+    a.r[1] = 1u;
+    a.r[2] = 3u;
+    (void)tc_call(0x80044e3cu, &a);
+    a.r[0] = 1u;
+    (void)tc_call(0x8004e22cu, &a);
+    a.r[0] = (u32)param_1 + 0x840u;
+    a.r[1] = 0u;
+    (void)tc_call(0x8004d368u, &a);
+    a.r[0] = 1u;
+    (void)tc_call(0x8004ca7cu, &a);
+    return;
+}

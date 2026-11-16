@@ -1,0 +1,26 @@
+#include "tc_rt.h"
+
+void fn_802d1480(u32 param_1, u32 param_2, s32 param_3)
+{
+    u32 r30 = 0, r31 = 0;
+    f64 f1 = 0.0;
+    TcArgs a = {0};
+    a.r[0] = param_1;
+    a.r[1] = param_2;
+    a.r[2] = (u32)param_3;
+    a.f[0] = 0.0;
+    f1 = tc_callf(rd32(rd32(param_1) + 0x50u), &a);
+    if ((u32)param_3 != 0u) {
+        r30 = param_1 + 0x14u;
+        r31 = rd32(r30);
+        while (r31 != r30) {
+            a.r[0] = r31 - 4u;
+            a.r[1] = param_2;
+            a.r[2] = (u32)param_3;
+            a.f[0] = f1;
+            f1 = tc_callf(rd32(rd32(r31 - 4u) + 0x48u), &a);
+            r31 = rd32(r31);
+        }
+    }
+    return;
+}

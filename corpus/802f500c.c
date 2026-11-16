@@ -1,0 +1,11 @@
+#include "tc_rt.h"
+
+s32 fn_802f500c(s32 param_1, u32 param_r4)
+{
+    TcArgs a = {0};
+    a.r[0] = (u32)param_1;
+    a.r[1] = param_r4;
+    (void)tc_call(0x802f527cu, &a);
+    wr32((u32)param_1 + 0xcu, 0u);
+    return param_1;
+}

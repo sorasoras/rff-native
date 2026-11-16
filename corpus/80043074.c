@@ -1,0 +1,72 @@
+#include "tc_rt.h"
+
+void fn_80043074(void)
+{
+    u32 r28 = 0, r29 = 0;
+    f64 f0 = 0.0, f1 = 0.0, f2 = 0.0, f3 = 0.0, f4 = 0.0, f5 = 0.0;
+    TcArgs a = {0};
+    a.r[0] = 0x80043020u;
+    a.r[1] = 0x8004303cu;
+    (void)tc_call(0x80278eb4u, &a);
+    (void)tc_call(0x802bad68u, &a);
+    a.r[0] = 0x803bf6e8u;
+    a.r[1] = 0u;
+    a.r[2] = 0x2598u;
+    (void)tc_call(0x8000443cu, &a);
+    f3 = (f64)rdf32(0x8057209cu);
+    f2 = (f64)rdf32(0x805720a0u);
+    f5 = (f64)rdf32(0x80572094u);
+    f4 = (f64)rdf32(0x80572098u);
+    f1 = (f64)rdf32(0x805720a4u);
+    f0 = (f64)rdf32(0x805720a8u);
+    wrf32d(0x803c1c38u, (f64)rdf32(0x80572090u));
+    wrf32d(0x803c1c3cu, f5);
+    wrf32d(0x803c1c40u, f4);
+    wrf32d(0x803c1c44u, f3);
+    wrf32d(0x803c1c48u, f2);
+    wrf32d(0x803c1c4cu, f3);
+    wrf32d(0x803c1c50u, f2);
+    wrf32d(0x803c1c54u, f3);
+    wrf32d(0x803c1c58u, f2);
+    wrf32d(0x803c1c5cu, f3);
+    wrf32d(0x803c1c60u, f2);
+    wrf32d(0x803c1c64u, f1);
+    wrf32d(0x803c1c68u, f0);
+    wr32(0x803c1c6cu, 0u);
+    a.r[0] = 0x80042e54u;
+    (void)tc_call(0x80278eb0u, &a);
+    wr32(0x803c1c74u, 0u);
+    wr32(0x803c1c70u, 4u);
+    wr32(0x803c1c7cu, 0u);
+    (void)tc_call(0x802bb05cu, &a);
+    r29 = 0x803bf6e8u;
+    r28 = 0u;
+    do {
+        wr32(r29 + 0x950u, 1u);
+        a.f[0] = (f64)rdf32(0x803c1c44u);
+        a.f[1] = (f64)rdf32(0x803c1c48u);
+        a.r[0] = r28;
+        (void)tc_call(0x802b8350u, &a);
+        a.f[0] = (f64)rdf32(0x803c1c4cu);
+        a.f[1] = (f64)rdf32(0x803c1c50u);
+        a.r[0] = r28;
+        (void)tc_call(0x802b836cu, &a);
+        a.f[0] = (f64)rdf32(0x803c1c54u);
+        a.f[1] = (f64)rdf32(0x803c1c58u);
+        a.r[0] = r28;
+        (void)tc_call(0x802b8388u, &a);
+        a.f[0] = (f64)rdf32(0x803c1c5cu);
+        a.f[1] = (f64)rdf32(0x803c1c60u);
+        a.r[0] = r28;
+        (void)tc_call(0x802b83a4u, &a);
+        a.f[0] = (f64)rdf32(0x803c1c64u);
+        a.f[1] = (f64)rdf32(0x803c1c68u);
+        a.r[0] = r28;
+        (void)tc_call(0x802b82c0u, &a);
+        a.r[0] = r28;
+        (void)tc_call(0x802b8594u, &a);
+        r28 = r28 + 1u;
+        r29 = r29 + 0x954u;
+    } while (r28 < 4u);
+    return;
+}

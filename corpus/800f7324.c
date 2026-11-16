@@ -1,0 +1,9 @@
+#include "tc_rt.h"
+
+void fn_800f7324(u32 param_1)
+{
+    TcArgs a = {0};
+    a.r[0] = rd32(param_1);
+    (void)tc_call(0x800f67a8u, &a);
+    return;
+}

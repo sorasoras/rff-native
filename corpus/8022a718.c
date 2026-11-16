@@ -1,0 +1,155 @@
+#include "tc_rt.h"
+
+void fn_8022a718(u32 param_1, u32 param_2, u32 param_3)
+{
+    u32 r0 = 0, r3 = 0, r4 = 0, r5 = 0, r6 = tc_argr(3u), r7 = tc_argr(4u), r8 = tc_argr(5u), r9 = tc_argr(6u), r24 = 0, r30 = 0, r31 = 0;
+    f64 f1 = tc_argf(0u);
+    TcArgs a = {0};
+    r3 = tc_call(0x8022c2b0u, &a);
+    f1 = tc_lastf();
+    r3 = tc_call(0x8022eff0u, &a);
+    f1 = tc_lastf();
+    a.r[0] = 0x804dff20u;
+    r3 = tc_call(0x80228148u, &a);
+    f1 = tc_lastf();
+    a.r[0] = 0x804dff20u;
+    r3 = tc_call(0x80227f20u, &a);
+    f1 = tc_lastf();
+    f1 = tc_callf(0x8022762cu, &a);
+    r3 = tc_lastr();
+    a.f[0] = f1;
+    a.f[1] = 0.0;
+    a.f[2] = 0.0;
+    a.f[3] = 0.0;
+    a.f[4] = 0.0;
+    a.f[5] = 0.0;
+    a.f[6] = 0.0;
+    a.f[7] = 0.0;
+    a.r[2] = tc_junkr(5u);
+    a.r[3] = tc_junkr(6u);
+    a.r[4] = tc_junkr(7u);
+    a.r[5] = tc_junkr(8u);
+    a.r[6] = tc_junkr(9u);
+    a.r[7] = tc_junkr(0xau);
+    r3 = tc_call(0x8023dc80u, &a);
+    f1 = tc_lastf();
+    a.r[0] = 0x80u;
+    r3 = tc_call(0x8022c6c0u, &a);
+    f1 = tc_lastf();
+    a.r[0] = 1u;
+    r3 = tc_call(0x8023f300u, &a);
+    f1 = tc_lastf();
+    r3 = tc_call(0x8023f180u, &a);
+    f1 = tc_lastf();
+    a.r[0] = 0u;
+    r3 = tc_call(0x8023d8d0u, &a);
+    f1 = tc_lastf();
+    a.r[0] = 0u;
+    r3 = tc_call(0x8023d914u, &a);
+    f1 = tc_lastf();
+    r3 = tc_call(0x8022c2c4u, &a);
+    f1 = tc_lastf();
+    r3 = tc_call(0x8023f378u, &a);
+    f1 = tc_lastf();
+    r24 = r3;
+    do {
+        r3 = tc_call(0x8023f378u, &a);
+        f1 = tc_lastf();
+    } while ((s32)(r3 - r24) < 1);
+    r3 = tc_call(0x8023029cu, &a);
+    f1 = tc_lastf();
+    r30 = tc_lastr4();
+    r31 = r3;
+    do {
+        a.r[0] = 0u;
+        a.r[1] = 0u;
+        r3 = tc_call(0x8022d940u, &a);
+        f1 = tc_lastf();
+        if (r3 != 0u) break;
+        r3 = tc_call(0x8023029cu, &a);
+        f1 = tc_lastf();
+        r4 = tc_lastr4();
+        r0 = (r3 - (r31 + (r30 > r4))) ^ 0x80000000u;
+        r4 = r0 - (r0 + ((((((ppc_mulhwu(0x10624dd3u, (rd32(0x800000f8u) >> 2u) & 0x3fffffffu) >> 6u) & 0x3ffffffu) * 0x3e8u) > (r4 - r30)) - 0x80000000u) > r0));
+        r4 = 0u - r4;
+    } while (r4 != 0u);
+    r3 = tc_call(0x8022c2b0u, &a);
+    f1 = tc_lastf();
+    a.r[0] = 1u;
+    a.r[1] = 0u;
+    r3 = tc_call(0x8022d940u, &a);
+    f1 = tc_lastf();
+    a.r[0] = 0u;
+    a.r[1] = 0u;
+    r3 = tc_call(0x80263648u, &a);
+    f1 = tc_lastf();
+    a.r[0] = 2u;
+    a.r[1] = 0u;
+    r3 = tc_call(0x80263648u, &a);
+    f1 = tc_lastf();
+    for (;;) {
+        a.r[0] = 0u;
+        a.r[1] = 1u;
+        a.r[2] = 0u;
+        r3 = tc_call(0x802641b0u, &a);
+        f1 = tc_lastf();
+        if (r3 != 0u) break;
+        a.r[0] = 0u;
+        r3 = tc_call(0x802633ccu, &a);
+        f1 = tc_lastf();
+        a.r[0] = 0u;
+        r3 = tc_call(0x80263b4cu, &a);
+        f1 = tc_lastf();
+        a.r[0] = 0u;
+        r3 = tc_call(0x802642acu, &a);
+        f1 = tc_lastf();
+    }
+    a.r[0] = 0u;
+    r3 = tc_call(0x802642acu, &a);
+    f1 = tc_lastf();
+    while ((rd32(0xcd00680cu) & 1u) == 1u) {
+    }
+    a.r[0] = 8u;
+    a.r[1] = 0x80226554u;
+    r3 = tc_call(0x80226494u, &a);
+    f1 = tc_lastf();
+    r3 = tc_call(0x80250380u, &a);
+    f1 = tc_lastf();
+    a.r[0] = 0x81400000u;
+    r3 = tc_call(0x80227208u, &a);
+    f1 = tc_lastf();
+    r3 = rd32(0x80000038u);
+    if (r3 != 0u) {
+        a.r[0] = r3;
+        r3 = tc_call(0x802271f0u, &a);
+        f1 = tc_lastf();
+    } else {
+        a.r[0] = rd32(0x80003110u);
+        r3 = tc_call(0x802271f0u, &a);
+        f1 = tc_lastf();
+    }
+    r9 = (u32)rd8(param_1);
+    r8 = (u32)rd8(param_1 + 1u);
+    wr8(0x804e01e8u, (u8)r9);
+    r7 = (u32)rd8(param_1 + 2u);
+    r6 = (u32)rd8(param_1 + 3u);
+    r5 = (u32)rd8(param_2);
+    r4 = (u32)rd8(param_2 + 1u);
+    r3 = (u32)rd8(param_2 + 2u);
+    r0 = (u32)rd8(param_2 + 3u);
+    wr8(0x804e01e9u, (u8)r8);
+    wr8(0x804e01eau, (u8)r7);
+    wr8(0x804e01ebu, (u8)r6);
+    wr8(0x804e01ecu, (u8)r5);
+    wr8(0x804e01edu, (u8)r4);
+    wr8(0x804e01eeu, (u8)r3);
+    wr8(0x804e01efu, (u8)r0);
+    wr32(0x804e01f0u, param_3);
+    r3 = tc_call(0x802271c0u, &a);
+    f1 = tc_lastf();
+    a.r[0] = 0x8022a930u;
+    a.r[1] = r3;
+    r3 = tc_call(0x802280e8u, &a);
+    f1 = tc_lastf();
+    return;
+}

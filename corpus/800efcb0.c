@@ -1,0 +1,31 @@
+#include "tc_rt.h"
+
+u32 fn_800efcb0(void)
+{
+    u32 r3 = 0, r4 = 0, r12 = 0, r30 = 0;
+    f64 f1 = 0.0;
+    TcArgs a = {0};
+    r30 = 0u;
+    for (;;) {
+        a.r[0] = 0x804b8960u;
+        a.r[1] = r30;
+        r3 = tc_call(0x802de9f0u, &a);
+        f1 = tc_lastf();
+        r4 = tc_lastr4();
+        r30 = r3;
+        if (r3 == 0u) break;
+        r12 = rd32(r3);
+        r3 = r3;
+        r12 = rd32(r12 + 0x14u);
+        a.r[0] = r3;
+        a.r[1] = r4;
+        a.f[0] = f1;
+        r3 = tc_call(r12, &a);
+        if (r3 != 0u) {
+            r3 = 1u;
+            return r3;
+        }
+    }
+    r3 = 0u;
+    return r3;
+}

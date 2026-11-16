@@ -1,0 +1,66 @@
+#include "tc_rt.h"
+
+void fn_801e6570(s32 param_1)
+{
+    wr32((u32)param_1 + 0x3f70u, 0xffffffffu);
+    wr16((u32)param_1 + 0x3f74u, 0u);
+    wr16((u32)param_1 + 0x3f76u, 0u);
+    wr32((u32)param_1 + 0x3f88u, 0xffffffffu);
+    wr16((u32)param_1 + 0x3f8cu, 0u);
+    wr16((u32)param_1 + 0x3f8eu, 0u);
+    wr32((u32)param_1 + 0x3fa0u, 0xffffffffu);
+    wr16((u32)param_1 + 0x3fa4u, 0u);
+    wr16((u32)param_1 + 0x3fa6u, 0u);
+    wr32((u32)param_1 + 0x3fb8u, 0xffffffffu);
+    wr16((u32)param_1 + 0x3fbcu, 0u);
+    wr16((u32)param_1 + 0x3fbeu, 0u);
+    wr32((u32)param_1 + 0x3fd0u, 0xffffffffu);
+    wr16((u32)param_1 + 0x3fd4u, 0u);
+    wr16((u32)param_1 + 0x3fd6u, 0u);
+    wr32((u32)param_1 + 0x3fe8u, 0xffffffffu);
+    wr16((u32)param_1 + 0x3fecu, 0u);
+    wr16((u32)param_1 + 0x3feeu, 0u);
+    wr32((u32)param_1 + 0x4000u, 0xffffffffu);
+    wr16((u32)param_1 + 0x4004u, 0u);
+    wr16((u32)param_1 + 0x4006u, 0u);
+    wr32((u32)param_1 + 0x4018u, 0xffffffffu);
+    wr16((u32)param_1 + 0x401cu, 0u);
+    wr16((u32)param_1 + 0x401eu, 0u);
+    wr32((u32)param_1 + 0x4030u, 0xffffffffu);
+    wr16((u32)param_1 + 0x4034u, 0u);
+    wr16((u32)param_1 + 0x4036u, 0u);
+    wr32((u32)param_1 + 0x4048u, 0xffffffffu);
+    wr16((u32)param_1 + 0x404cu, 0u);
+    wr16((u32)param_1 + 0x404eu, 0u);
+    wr32((u32)param_1 + 0x4060u, 0xffffffffu);
+    wr16((u32)param_1 + 0x4064u, 0u);
+    wr16((u32)param_1 + 0x4066u, 0u);
+    wr32((u32)param_1 + 0x4078u, 0xffffffffu);
+    wr16((u32)param_1 + 0x407cu, 0u);
+    wr16((u32)param_1 + 0x407eu, 0u);
+    wr32((u32)param_1 + 0x4090u, 0xffffffffu);
+    wr16((u32)param_1 + 0x4094u, 0u);
+    wr16((u32)param_1 + 0x4096u, 0u);
+    wr32((u32)param_1 + 0x40a8u, 0xffffffffu);
+    wr16((u32)param_1 + 0x40acu, 0u);
+    wr16((u32)param_1 + 0x40aeu, 0u);
+    wr32((u32)param_1 + 0x40c0u, 0xffffffffu);
+    wr16((u32)param_1 + 0x40c4u, 0u);
+    wr16((u32)param_1 + 0x40c6u, 0u);
+    wr32((u32)param_1 + 0x40d8u, 0xffffffffu);
+    wr16((u32)param_1 + 0x40dcu, 0u);
+    wr16((u32)param_1 + 0x40deu, 0u);
+    wr32((u32)param_1 + 0x40f0u, 0xffffffffu);
+    wr16((u32)param_1 + 0x40f4u, 0u);
+    wr16((u32)param_1 + 0x40f6u, 0u);
+    wr32((u32)param_1 + 0x4108u, 0xffffffffu);
+    wr16((u32)param_1 + 0x410cu, 0u);
+    wr16((u32)param_1 + 0x410eu, 0u);
+    wr32((u32)param_1 + 0x4120u, 0xffffffffu);
+    wr16((u32)param_1 + 0x4124u, 0u);
+    wr16((u32)param_1 + 0x4126u, 0u);
+    wr32((u32)param_1 + 0x4138u, 0xffffffffu);
+    wr16((u32)param_1 + 0x413cu, 0u);
+    wr16((u32)param_1 + 0x413eu, 0u);
+    return;
+}

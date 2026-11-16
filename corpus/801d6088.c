@@ -1,0 +1,62 @@
+#include "tc_rt.h"
+
+u32 fn_801d6088(u32 param_1, u32 param_2)
+{
+    u32 r27 = 0, r28 = 0;
+    TcArgs a = {0};
+    wr32(param_1 + 0x74u, 0x80374ab4u);
+    wr32(param_1, 0u);
+    wr32(param_1 + 4u, 0u);
+    wr32(param_1 + 8u, param_2);
+    a.r[0] = param_1 + 0x14u;
+    (void)tc_call(0x80157d94u, &a);
+    r28 = param_1 + 0x78u;
+    wr32(param_1 + 0xecu, 0x80374ab4u);
+    wr32(param_1 + 0x74u, 0x80374974u);
+    wr32(param_1 + 0x78u, 0u);
+    wr32(param_1 + 0x7cu, 0u);
+    wr32(param_1 + 0x80u, param_2);
+    a.r[0] = r28 + 0x14u;
+    (void)tc_call(0x80157d94u, &a);
+    r27 = param_1 + 0xf0u;
+    wr32(param_1 + 0x164u, 0x80374ab4u);
+    wr32(r28 + 0x74u, 0x80374a8cu);
+    wr32(param_1 + 0xf0u, 0u);
+    wr32(param_1 + 0xf4u, 0u);
+    wr32(param_1 + 0xf8u, param_2);
+    a.r[0] = r27 + 0x14u;
+    (void)tc_call(0x80157d94u, &a);
+    r28 = param_1 + 0x168u;
+    wr32(param_1 + 0x1dcu, 0x80374ab4u);
+    wr32(r27 + 0x74u, 0x80374a70u);
+    wr32(param_1 + 0x168u, 0u);
+    wr32(param_1 + 0x16cu, 0u);
+    wr32(param_1 + 0x170u, param_2);
+    a.r[0] = r28 + 0x14u;
+    (void)tc_call(0x80157d94u, &a);
+    r27 = param_1 + 0x1e0u;
+    wr32(param_1 + 0x254u, 0x80374ab4u);
+    wr32(r28 + 0x74u, 0x80374a54u);
+    wr32(param_1 + 0x1e0u, 0u);
+    wr32(param_1 + 0x1e4u, 0u);
+    wr32(param_1 + 0x1e8u, param_2);
+    a.r[0] = r27 + 0x14u;
+    (void)tc_call(0x80157d94u, &a);
+    wr32(r27 + 0x74u, 0x80374a38u);
+    wr32(param_1 + 0x258u, param_1 + 0x78u);
+    wr32(param_1 + 0x25cu, param_1 + 0xf0u);
+    wr32(param_1 + 0x260u, r28);
+    wr32(param_1 + 0x264u, r27);
+    wr32(param_1 + 0x268u, 0u);
+    wr32(param_1 + 0x26cu, 0u);
+    wr32(param_1 + 0x270u, 0u);
+    wr32(param_1 + 0x274u, 0u);
+    wr32(param_1 + 0x278u, 0u);
+    wr32(param_1 + 0x27cu, 0u);
+    wr32(param_1 + 0x280u, 0u);
+    wr32(param_1 + 0x284u, 0u);
+    wr32(param_1 + 0x288u, 0u);
+    wr32(param_1 + 0x28cu, 0u);
+    wr32(param_1 + 0x290u, 0u);
+    return param_1;
+}

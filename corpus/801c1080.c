@@ -1,0 +1,61 @@
+#include "tc_rt.h"
+
+void fn_801c1080(s32 param_1)
+{
+    u32 r31 = 0;
+    TcArgs a = {0};
+    r31 = rd32(0x804863d8u);
+    a.r[0] = r31;
+    a.r[1] = 3u;
+    a.r[2] = (u32)param_1 + 0x14u;
+    (void)tc_call(0x8006bc8cu, &a);
+    a.r[0] = r31;
+    a.r[1] = 0u;
+    a.r[2] = (u32)param_1 + 4u;
+    (void)tc_call(0x8006bc2cu, &a);
+    a.r[0] = r31;
+    a.r[1] = 0u;
+    a.r[2] = (u32)param_1 + 8u;
+    (void)tc_call(0x8006bc8cu, &a);
+    a.r[0] = r31;
+    a.r[1] = 1u;
+    a.r[2] = (u32)param_1 + 0xcu;
+    (void)tc_call(0x8006bc8cu, &a);
+    a.r[0] = r31;
+    a.r[1] = 2u;
+    a.r[2] = (u32)param_1 + 0x10u;
+    (void)tc_call(0x8006bc8cu, &a);
+    a.r[0] = r31;
+    a.r[1] = (u32)param_1;
+    (void)tc_call(0x8006bd4cu, &a);
+    a.r[0] = (u32)param_1 + 0x18u;
+    a.r[1] = 0x80499214u;
+    a.r[2] = 4u;
+    (void)tc_call(0x80004338u, &a);
+    a.r[0] = (u32)param_1 + 0x1cu;
+    a.r[1] = (u32)param_1 + 4u;
+    (void)tc_call(0x801a78c0u, &a);
+    a.r[0] = (u32)param_1 + 0x1cu;
+    a.r[1] = (u32)param_1 + 8u;
+    (void)tc_call(0x801a78c0u, &a);
+    a.r[0] = (u32)param_1 + 0x1cu;
+    a.r[1] = (u32)param_1 + 0xcu;
+    (void)tc_call(0x801a78c0u, &a);
+    a.r[0] = (u32)param_1 + 0x1cu;
+    a.r[1] = (u32)param_1 + 0x10u;
+    (void)tc_call(0x801a78c0u, &a);
+    a.r[0] = (u32)param_1 + 0x1cu;
+    a.r[1] = (u32)param_1 + 0x14u;
+    (void)tc_call(0x801a78c0u, &a);
+    a.r[0] = (u32)param_1 + 0x1cu;
+    a.r[1] = (u32)param_1 + 0x18u;
+    (void)tc_call(0x801a78c0u, &a);
+    a.r[0] = (u32)param_1 + 0x114u;
+    (void)tc_call(0x801a7844u, &a);
+    a.r[0] = (u32)param_1 + 0x190u;
+    (void)tc_call(0x801a7844u, &a);
+    wr16((u32)param_1 + 0x20cu, 0x2e8u);
+    wr8((u32)param_1 + 0x20eu, 1u);
+    wr8((u32)param_1 + 0x20fu, 1u);
+    return;
+}

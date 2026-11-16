@@ -1,0 +1,96 @@
+#include "tc_rt.h"
+
+static u64 px_f2b(f64 x)
+{
+    union { f64 d; u64 b; } v;
+    v.d = x;
+    return v.b;
+}
+
+static f64 px_b2f(u64 x)
+{
+    union { f64 d; u64 b; } v;
+    v.b = x;
+    return v.d;
+}
+
+static f32 px_w2f(u32 x)
+{
+    union { f32 f; u32 w; } v;
+    v.w = x;
+    return v.f;
+}
+
+static f64 px_hi(f64 x)
+{
+    return (f64)px_w2f((u32)(px_f2b(x) >> 32));
+}
+
+static f64 px_lo(f64 x)
+{
+    return (f64)px_w2f((u32)px_f2b(x));
+}
+
+static f64 px_pack(f64 a, f64 b)
+{
+    return px_b2f(((u64)ppc_single_bits(a) << 32) | (u64)ppc_single_bits(b));
+}
+
+void fn_80031520(s32 param_1, s32 param_2)
+{
+    u32 r4 = 0, r12 = 0, r31 = 0, t4 = 0, t7 = 0, t8 = 0, t11 = 0, t12 = 0, t15 = 0, t16 = 0, t19 = 0, t20 = 0;
+    u32 t23 = 0;
+    f64 f1 = 0.0, f2 = 0.0, f3 = 0.0, f4 = 0.0, f5 = 0.0, f6 = 0.0;
+    TcArgs a = {0};
+    f1 = px_pack((f64)rdf32((u32)param_2), (f64)rdf32((u32)param_2));
+    wrf32d((u32)param_1, px_hi(f1));
+    wrf32d((u32)param_1, px_lo(f1));
+    t4 = (u32)param_2 + 8u;
+    f2 = px_pack((f64)rdf32(t4), (f64)rdf32(t4));
+    t7 = (u32)param_1 + 8u;
+    wrf32d(t7, px_hi(f2));
+    wrf32d(t7, px_lo(f2));
+    t8 = (u32)param_2 + 0x10u;
+    f3 = px_pack((f64)rdf32(t8), (f64)rdf32(t8));
+    t11 = (u32)param_1 + 0x10u;
+    wrf32d(t11, px_hi(f3));
+    wrf32d(t11, px_lo(f3));
+    t12 = (u32)param_2 + 0x18u;
+    f4 = px_pack((f64)rdf32(t12), (f64)rdf32(t12));
+    t15 = (u32)param_1 + 0x18u;
+    wrf32d(t15, px_hi(f4));
+    wrf32d(t15, px_lo(f4));
+    t16 = (u32)param_2 + 0x20u;
+    f5 = px_pack((f64)rdf32(t16), (f64)rdf32(t16));
+    t19 = (u32)param_1 + 0x20u;
+    wrf32d(t19, px_hi(f5));
+    wrf32d(t19, px_lo(f5));
+    t20 = (u32)param_2 + 0x28u;
+    f6 = px_pack((f64)rdf32(t20), (f64)rdf32(t20));
+    t23 = (u32)param_1 + 0x28u;
+    wrf32d(t23, px_hi(f6));
+    wrf32d(t23, px_lo(f6));
+    r31 = 0u;
+    while (r31 < rd32((u32)param_1 + 0x34u)) {
+        r4 = rd32((u32)param_1 + 0x38u) + (rd32((u32)param_1 + 0x3cu) * r31);
+        r12 = rd32(r4 + 0x58u);
+        if (r12 != 0u) {
+            a.r[0] = (u32)param_1;
+            a.r[1] = r4;
+            a.f[0] = f1;
+            a.f[1] = f2;
+            a.f[2] = f3;
+            a.f[3] = f4;
+            a.f[4] = f5;
+            a.f[5] = f6;
+            f1 = tc_callf(r12, &a);
+            f2 = 0.0;
+            f3 = 0.0;
+            f4 = 0.0;
+            f5 = 0.0;
+            f6 = 0.0;
+        }
+        r31 = r31 + 1u;
+    }
+    return;
+}

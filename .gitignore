@@ -1,0 +1,12 @@
+# build outputs and the binary
+build/
+rff.exe
+*.obj
+
+# diagnostic archive (hundreds of session logs)
+diag/
+
+# large local data
+*.img
+*.sav
+__pycache__/

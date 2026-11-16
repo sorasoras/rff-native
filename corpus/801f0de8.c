@@ -1,0 +1,15 @@
+#include "tc_rt.h"
+
+s32 fn_801f0de8(s32 param_1, s32 param_2)
+{
+    TcArgs a = {0};
+    if ((u32)param_1 != 0u) {
+        a.r[0] = (u32)param_1;
+        (void)tc_call(0x801f0ff4u, &a);
+        if (param_2 > 0) {
+            a.r[0] = (u32)param_1;
+            (void)tc_call(0x801f0d6cu, &a);
+        }
+    }
+    return param_1;
+}

@@ -1,0 +1,61 @@
+#include "tc_rt.h"
+
+void fn_80060784(void)
+{
+    TcArgs a = {0};
+    a.r[0] = 0x80468ae8u;
+    (void)tc_call(0x80050580u, &a);
+    a.r[0] = 0x80468ae8u;
+    a.r[1] = 0x800505a4u;
+    a.r[2] = 0x80468ad8u;
+    (void)tc_call(0x802551b8u, &a);
+    a.r[0] = 0x80468b40u;
+    (void)tc_call(0x80050580u, &a);
+    a.r[0] = 0x80468b40u;
+    a.r[1] = 0x800505a4u;
+    a.r[2] = 0x80468b30u;
+    (void)tc_call(0x802551b8u, &a);
+    a.r[0] = 0x80468b98u;
+    (void)tc_call(0x80050580u, &a);
+    a.r[0] = 0x80468b98u;
+    a.r[1] = 0x800505a4u;
+    a.r[2] = 0x80468b88u;
+    (void)tc_call(0x802551b8u, &a);
+    a.r[0] = 0x80468bf0u;
+    (void)tc_call(0x80050580u, &a);
+    a.r[0] = 0x80468bf0u;
+    a.r[1] = 0x800505a4u;
+    a.r[2] = 0x80468be0u;
+    (void)tc_call(0x802551b8u, &a);
+    a.r[0] = 0x80468c48u;
+    (void)tc_call(0x80050580u, &a);
+    a.r[0] = 0x80468c48u;
+    a.r[1] = 0x800505a4u;
+    a.r[2] = 0x80468c38u;
+    (void)tc_call(0x802551b8u, &a);
+    a.r[0] = 0x80468ca0u;
+    (void)tc_call(0x80050580u, &a);
+    a.r[0] = 0x80468ca0u;
+    a.r[1] = 0x800505a4u;
+    a.r[2] = 0x80468c90u;
+    (void)tc_call(0x802551b8u, &a);
+    a.r[0] = 0x80468cf8u;
+    (void)tc_call(0x80050580u, &a);
+    a.r[0] = 0x80468cf8u;
+    a.r[1] = 0x800505a4u;
+    a.r[2] = 0x80468ce8u;
+    (void)tc_call(0x802551b8u, &a);
+    a.r[0] = 0x80468d50u;
+    (void)tc_call(0x80050580u, &a);
+    a.r[0] = 0x80468d50u;
+    a.r[1] = 0x800505a4u;
+    a.r[2] = 0x80468d40u;
+    (void)tc_call(0x802551b8u, &a);
+    a.r[0] = 0x80468da8u;
+    (void)tc_call(0x80050580u, &a);
+    a.r[0] = 0x80468da8u;
+    a.r[1] = 0x800505a4u;
+    a.r[2] = 0x80468d98u;
+    (void)tc_call(0x802551b8u, &a);
+    return;
+}

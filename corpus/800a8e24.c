@@ -1,0 +1,83 @@
+#include "tc_rt.h"
+
+void fn_800a8e24(u32 param_1)
+{
+    u32 r0 = 0, r3 = 0, r30 = 0, r31 = 0;
+    f64 f1 = 0.0;
+    TcArgs a = {0};
+    wr32(0x817fdfd0u, 0x817fe000u);
+    wr32(0x817fe004u, 0x817ff000u);
+    wr32(0x817fdffcu, 0u);
+    wr32(0x817fdff8u, 0u);
+    wr32(0x817fdff4u, 0u);
+    r30 = rd32(param_1 + 0x1a4u);
+    if (r30 != 0u) {
+        a.r[0] = r30;
+        a.r[1] = 0u;
+        a.r[2] = 0u;
+        a.f[0] = 0.0;
+        a.f[1] = 0.0;
+        r3 = tc_call(rd32(rd32(r30) + 0x28u), &a);
+        f1 = tc_lastf();
+        r31 = r3;
+        a.r[0] = param_1;
+        a.r[1] = tc_lastr4();
+        a.r[2] = 0u;
+        a.f[0] = f1;
+        a.f[1] = 0.0;
+        r3 = tc_call(rd32(rd32(param_1) + 0x28u), &a);
+        r0 = rd32(r3 + 4u);
+        wr32(0x817fdfd8u, rd32(r3));
+        wr32(0x817fdfdcu, r0);
+        wr32(0x817fdfe0u, rd32(r3 + 8u));
+        a.r[0] = 0x817fdfd8u;
+        a.r[1] = r31;
+        a.r[2] = 0x817fdfd8u;
+        f1 = tc_callf(0x802343a4u, &a);
+        wrf32d(0x817fdfdcu, (f64)rdf32(0x80572b78u));
+        a.r[0] = r30;
+        a.r[1] = tc_lastr4();
+        a.r[2] = 0u;
+        a.f[0] = f1;
+        a.f[1] = 0.0;
+        r3 = tc_call(rd32(rd32(r30) + 0x28u), &a);
+        f1 = tc_lastf();
+        r31 = r3;
+        a.r[0] = param_1;
+        a.r[1] = tc_lastr4();
+        a.r[2] = 0u;
+        a.f[0] = f1;
+        a.f[1] = 0.0;
+        r3 = tc_call(rd32(rd32(param_1) + 0x28u), &a);
+        a.r[0] = param_1;
+        a.r[1] = r3;
+        a.r[2] = r31;
+        f1 = tc_callf(0x8007eeacu, &a);
+        wrf32d(param_1 + 0x2d8u, f1);
+        a.r[0] = param_1;
+        a.r[1] = tc_lastr4();
+        a.r[2] = 0u;
+        a.f[0] = f1;
+        a.f[1] = 0.0;
+        f1 = tc_callf(rd32(rd32(param_1) + 0x2cu), &a);
+        f1 = (f64)(f32)((f64)rdf32(param_1 + 0x2d8u) - f1);
+        a.f[0] = f1;
+        f1 = tc_callf(0x8007edd4u, &a);
+        wrf32d(param_1 + 0x2dcu, f1);
+        a.r[0] = 0x817fdfd8u;
+        f1 = tc_callf(0x80234440u, &a);
+        wrf32d(param_1 + 0x2e0u, f1);
+        a.r[0] = r30;
+        a.r[1] = tc_lastr4();
+        a.r[2] = 0u;
+        a.f[0] = f1;
+        a.f[1] = 0.0;
+        f1 = tc_callf(rd32(rd32(r30) + 0x2cu), &a);
+        f1 = (f64)(f32)((f64)(f32)((f64)rdf32(0x80572b90u) + (f64)rdf32(param_1 + 0x2d8u)) - f1);
+        a.f[0] = f1;
+        f1 = tc_callf(0x8007edd4u, &a);
+        wrf32d(param_1 + 0x2e4u, f1);
+        wr32(param_1 + 0x2e8u, 0u);
+    }
+    return;
+}

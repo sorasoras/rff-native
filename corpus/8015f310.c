@@ -1,0 +1,76 @@
+#include "tc_rt.h"
+
+void fn_8015f310(u32 param_1)
+{
+    u32 ctr = 0, r3 = 0;
+    r3 = param_1;
+    ctr = 0x39u;
+    do {
+        wr32(r3, 1u);
+        wr16(r3 + 4u, 0x3e8u);
+        wr16(r3 + 6u, 0x3e8u);
+        wr16(r3 + 8u, 0x3e8u);
+        wr16(r3 + 0xau, 0x3e8u);
+        wr16(r3 + 0xcu, 0x3e8u);
+        wr16(r3 + 0xeu, 0x3e8u);
+        wr16(r3 + 0x10u, 0x3e8u);
+        wr16(r3 + 0x12u, 0x3e8u);
+        wr8(r3 + 0x14u, 0x1eu);
+        wr8(r3 + 0x15u, 0x1eu);
+        wr8(r3 + 0x16u, 0x1eu);
+        wr8(r3 + 0x17u, 0x1eu);
+        wr8(r3 + 0x18u, 0xffu);
+        wr8(r3 + 0x19u, 0u);
+        wr8(r3 + 0x1au, 0xffu);
+        wr8(r3 + 0x1bu, 0u);
+        wr8(r3 + 0x1cu, 0xffu);
+        wr8(r3 + 0x1du, 0u);
+        wr8(r3 + 0x1eu, 0xffu);
+        wr8(r3 + 0x1fu, 0xffu);
+        wr32(r3 + 0x20u, 1u);
+        wr16(r3 + 0x24u, 0x3e8u);
+        wr16(r3 + 0x26u, 0x3e8u);
+        wr16(r3 + 0x28u, 0x3e8u);
+        wr16(r3 + 0x2au, 0x3e8u);
+        wr16(r3 + 0x2cu, 0x3e8u);
+        wr16(r3 + 0x2eu, 0x3e8u);
+        wr16(r3 + 0x30u, 0x3e8u);
+        wr16(r3 + 0x32u, 0x3e8u);
+        wr8(r3 + 0x34u, 0x1eu);
+        wr8(r3 + 0x35u, 0x1eu);
+        wr8(r3 + 0x36u, 0x1eu);
+        wr8(r3 + 0x37u, 0x1eu);
+        wr8(r3 + 0x38u, 0xffu);
+        wr8(r3 + 0x39u, 0u);
+        wr8(r3 + 0x3au, 0xffu);
+        wr8(r3 + 0x3bu, 0u);
+        wr8(r3 + 0x3cu, 0xffu);
+        wr8(r3 + 0x3du, 0u);
+        wr8(r3 + 0x3eu, 0xffu);
+        wr8(r3 + 0x3fu, 0xffu);
+        wr32(r3 + 0x40u, 1u);
+        wr16(r3 + 0x44u, 0x3e8u);
+        wr16(r3 + 0x46u, 0x3e8u);
+        wr16(r3 + 0x48u, 0x3e8u);
+        wr16(r3 + 0x4au, 0x3e8u);
+        wr16(r3 + 0x4cu, 0x3e8u);
+        wr16(r3 + 0x4eu, 0x3e8u);
+        wr16(r3 + 0x50u, 0x3e8u);
+        wr16(r3 + 0x52u, 0x3e8u);
+        wr8(r3 + 0x54u, 0x1eu);
+        wr8(r3 + 0x55u, 0x1eu);
+        wr8(r3 + 0x56u, 0x1eu);
+        wr8(r3 + 0x57u, 0x1eu);
+        wr8(r3 + 0x58u, 0xffu);
+        wr8(r3 + 0x59u, 0u);
+        wr8(r3 + 0x5au, 0xffu);
+        wr8(r3 + 0x5bu, 0u);
+        wr8(r3 + 0x5cu, 0xffu);
+        wr8(r3 + 0x5du, 0u);
+        wr8(r3 + 0x5eu, 0xffu);
+        wr8(r3 + 0x5fu, 0xffu);
+        r3 = r3 + 0x60u;
+        ctr = ctr - 1u;
+    } while (ctr != 0u);
+    return;
+}

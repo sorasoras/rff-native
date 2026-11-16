@@ -1,0 +1,75 @@
+#include "tc_rt.h"
+
+void fn_800308a0(void)
+{
+    u32 ctr = 0, r3 = 0, r4 = 0;
+    f64 f0 = 0.0, f1 = 0.0;
+    TcArgs a = {0};
+    f1 = (f64)rdf32(0x80571e40u);
+    r3 = 0x8039de80u;
+    r4 = 0x803a0e80u;
+    f0 = (f64)rdf32(0x80571e44u);
+    ctr = 0x80u;
+    do {
+        wrf32d(r3, f1);
+        wrf32d(r4, f1);
+        wrf32d(r3 + 0x10u, f0);
+        wrf32d(r4 + 0x10u, f0);
+        wrf32d(r3 + 0x20u, f0);
+        wrf32d(r4 + 0x20u, f0);
+        wrf32d(r3 + 4u, f0);
+        wrf32d(r4 + 4u, f0);
+        wrf32d(r3 + 0x14u, f1);
+        wrf32d(r4 + 0x14u, f1);
+        wrf32d(r3 + 0x24u, f0);
+        wrf32d(r4 + 0x24u, f0);
+        wrf32d(r3 + 8u, f0);
+        wrf32d(r4 + 8u, f0);
+        wrf32d(r3 + 0x18u, f0);
+        wrf32d(r4 + 0x18u, f0);
+        wrf32d(r3 + 0x28u, f1);
+        wrf32d(r4 + 0x28u, f1);
+        wrf32d(r3 + 0xcu, f0);
+        wrf32d(r4 + 0xcu, f0);
+        wrf32d(r3 + 0x1cu, f0);
+        wrf32d(r4 + 0x1cu, f0);
+        wrf32d(r3 + 0x2cu, f0);
+        wrf32d(r4 + 0x2cu, f0);
+        wrf32d(r3 + 0x30u, f1);
+        wrf32d(r4 + 0x30u, f1);
+        wrf32d(r3 + 0x40u, f0);
+        wrf32d(r4 + 0x40u, f0);
+        wrf32d(r3 + 0x50u, f0);
+        wrf32d(r4 + 0x50u, f0);
+        wrf32d(r3 + 0x34u, f0);
+        wrf32d(r4 + 0x34u, f0);
+        wrf32d(r3 + 0x44u, f1);
+        wrf32d(r4 + 0x44u, f1);
+        wrf32d(r3 + 0x54u, f0);
+        wrf32d(r4 + 0x54u, f0);
+        wrf32d(r3 + 0x38u, f0);
+        wrf32d(r4 + 0x38u, f0);
+        wrf32d(r3 + 0x48u, f0);
+        wrf32d(r4 + 0x48u, f0);
+        wrf32d(r3 + 0x58u, f1);
+        wrf32d(r4 + 0x58u, f1);
+        wrf32d(r3 + 0x3cu, f0);
+        wrf32d(r4 + 0x3cu, f0);
+        wrf32d(r3 + 0x4cu, f0);
+        wrf32d(r4 + 0x4cu, f0);
+        wrf32d(r3 + 0x5cu, f0);
+        r3 = r3 + 0x60u;
+        wrf32d(r4 + 0x5cu, f0);
+        r4 = r4 + 0x60u;
+        ctr = ctr - 1u;
+    } while (ctr != 0u);
+    a.r[0] = 1u;
+    a.r[1] = 1u;
+    a.r[2] = 1u;
+    (void)tc_call(0x8007b12cu, &a);
+    a.f[0] = (f64)rdf32(0x80571e40u);
+    (void)tc_call(0x8007d104u, &a);
+    a.r[0] = 1u;
+    (void)tc_call(0x8007d10cu, &a);
+    return;
+}

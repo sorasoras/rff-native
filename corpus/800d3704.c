@@ -1,0 +1,61 @@
+#include "tc_rt.h"
+
+void fn_800d3704(s32 param_1)
+{
+    u32 r4 = 0;
+    f64 f0 = 0.0, f1 = 0.0, f2 = 0.0, f3 = 0.0, f4 = 0.0;
+    TcArgs a = {0};
+    a.r[0] = (u32)param_1 + 0x528u;
+    a.r[1] = 0u;
+    a.r[2] = 0x200u;
+    (void)tc_call(0x8000443cu, &a);
+    f0 = (f64)rdf32(0x80573124u);
+    r4 = rd32((u32)param_1 + 0x72cu) & 0x7fffffffu;
+    f1 = (f64)rdf32(0x80573118u);
+    r4 = (r4 & 0xdfffffffu) | (((u32)((s32)r4 >> 31) << 0x1du) & 0x20000000u);
+    f4 = (f64)rdf32(0x8057313cu);
+    f3 = (f64)rdf32(0x80573114u);
+    f2 = (f64)rdf32(0x80573140u);
+    r4 = (r4 & 0xbfffffffu) | (((u32)((s32)((r4 << 2u) & 0xc0000000u) >> 31) << 0x1eu) & 0x40000000u);
+    wrf32d((u32)param_1 + 0x4f8u, (f64)rdf32(0x80573138u));
+    r4 = r4 | 0x18000000u;
+    wrf32d((u32)param_1 + 0x4fcu, f4);
+    wrf32d((u32)param_1 + 0x4f0u, f3);
+    wrf32d((u32)param_1 + 0x4f4u, f2);
+    wrf32d((u32)param_1 + 0x504u, f1);
+    wrf32d((u32)param_1 + 0x500u, f1);
+    wrf32d((u32)param_1 + 0x50cu, f0);
+    wrf32d((u32)param_1 + 0x508u, f0);
+    wr32((u32)param_1 + 0x728u, 4u);
+    wrf32d((u32)param_1 + 0x4e8u, f0);
+    wrf32d((u32)param_1 + 0x4ecu, f0);
+    wr32((u32)param_1 + 0x72cu, r4);
+    wr32((u32)param_1 + 0x51cu, 0u);
+    a.r[0] = (u32)param_1;
+    (void)tc_call(0x800d53b4u, &a);
+    wrf32d((u32)param_1 + 0x4dcu, (f64)rdf32(0x80573120u));
+    f1 = tc_callf(0x800d3b08u, &a);
+    a.f[0] = f1;
+    a.r[0] = (u32)param_1 + 0x4bcu;
+    (void)tc_call(0x800d5a24u, &a);
+    wr32((u32)param_1 + 0x72cu, rd32((u32)param_1 + 0x72cu) & 0xfbffffffu);
+    a.r[0] = (u32)param_1;
+    a.r[1] = 3u;
+    (void)tc_call(0x800d3830u, &a);
+    a.f[0] = (f64)rdf32(0x8057311cu);
+    a.r[0] = (u32)param_1;
+    (void)tc_call(0x800d59c8u, &a);
+    a.f[0] = (f64)rdf32(0x8057311cu);
+    a.r[0] = (u32)param_1;
+    (void)tc_call(0x800d59d0u, &a);
+    a.r[0] = (u32)param_1;
+    a.r[1] = 0u;
+    (void)tc_call(0x800d5a14u, &a);
+    a.r[0] = (u32)param_1;
+    a.r[1] = 1u;
+    (void)tc_call(0x800d5bacu, &a);
+    a.r[0] = (u32)param_1;
+    a.r[1] = 0u;
+    (void)tc_call(0x800d5c24u, &a);
+    return;
+}

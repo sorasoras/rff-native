@@ -1,0 +1,9 @@
+#include "tc_rt.h"
+
+void fn_800a5160(void)
+{
+    TcArgs a = {0};
+    (void)tc_call(0x80097da4u, &a);
+    (void)tc_call(0x800ac3d4u, &a);
+    return;
+}
